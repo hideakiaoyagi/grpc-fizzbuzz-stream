@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package fizzbuzz;
+
+service FizzbuzzService {
+    rpc GetFizzbuzzList (FizzbuzzRequest) returns (stream FizzbuzzResponse) {}
+}
+
+message FizzbuzzRequest {
+    int32 start_number = 1;
+    int32 end_number   = 2;
+}
+
+message FizzbuzzResponse {
+    string word = 1;
+}
